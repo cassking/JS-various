@@ -3,15 +3,15 @@
 
 function factorialize(number) {
   //get all numbers before it
-  let numberBucket = 1;//multiply number by 1
+  let numberSave = 1;//multiply number by 1
   //to start
   for( let i=1; i<=number; i++){
     console.log(i)
-    numberBucket = numberBucket*i
+    numberSave = numberSave*i
     //or
     //numberBucket *=i
   }
-  return numberBucket
+  return numberSave
 }
 
 console.log(factorialize(8))
