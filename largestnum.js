@@ -19,19 +19,40 @@
 //   return maxes
 // }
 //alerternate way
+// function largestOfArrays(array){
+//   //return largest numbers in each innner array
+//   let maxes =[0,0,0,0]
+//   for(let i=0;i < array.length; i++){
+//     for(let j=0; j<array[i].length;j++){
+//       console.log('inner loop',array[i][j])//dig into innner array
+//       //j is index of inner loop
+//       let currentNumber = array[i][j]//
+//       if( currentNumber >= maxes[i]) {//i referes to outer loop, 4 arrays
+//         console.log('current', currentNumber, 'maxes[i]',maxes[i])
+//         maxes[i] = currentNumber
+//       }
+//     }
+//   }
+//   console.log(maxes)
+//   return maxes
+// }
+function findMax(array){
+  let max = array[0]//first elem
+  for (let i=0; i< array.length;i++){
+    if (array[i] >max){
+      max = array[i]
+    }
+  }
+  console.log('findMax result',max)
+  return max
+}
 function largestOfArrays(array){
   //return largest numbers in each innner array
-  let maxes =[0,0,0,0]
+  let maxes =[]
   for(let i=0;i < array.length; i++){
-    for(let j=0; j<array[i].length;j++){
-      console.log('inner loop',array[i][j])//dig into innner array
-      //j is index of inner loop
-      let currentNumber = array[i][j]//
-      if( currentNumber >= maxes[i]) {//i referes to outer loop, 4 arrays
-        console.log('current', currentNumber, 'maxes[i]',maxes[i])
-        maxes[i] = currentNumber
-      }
-    }
+    console.log(array[i])//inner arrays
+    let innerMax = findMax(array[i])//return max for eac of 4 arrays
+    maxes.push(innerMax)
   }
   console.log(maxes)
   return maxes
